@@ -65,6 +65,7 @@ namespace DungeonGame
                         "You then always want to follow your command with the object or room you are trying to interact with or move to.\n" +
                         "To see your inventory type 'inventory'\n" +
                         "An example would be typing in 'go sitting room'. Or 'examine dresser'.\n" +
+                        "Please note room names are always in CAPITOL letters\n" +
                         "You can even 'use' some items in your inventory!");
                     Console.WriteLine("Press any key to continue");
                     Console.ReadKey();
@@ -94,6 +95,7 @@ namespace DungeonGame
                                 Console.WriteLine("You try to sneak past the troll but its keen sense of smell easily detects the precence of an intruder.\n" +
                                     "He waits until you are nearly to the stairs and then grabs you. Laughing horribly.\n" +
                                     "\n\nGAME OVER.\nPress any key to exit...");
+                                Console.ReadKey();
                                 isAlive = false;
                             }
                             //if the user has already opened the tower, they go here
