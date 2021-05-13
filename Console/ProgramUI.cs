@@ -86,9 +86,11 @@ namespace DungeonGame
                             {
                                 Console.WriteLine("You unlock the door with the key you found behind the painting.\n" +
                                     "You can now enter the tower!.");
+                                Console.ReadKey();
                                 foundExit = true;
                                 hasOpenedTower = true;
                                 currentRoom = Rooms[exit];
+
                             }
                             else if (userInput.Contains("roof") && trollAlive == true)
                             {
