@@ -32,7 +32,7 @@ namespace DungeonGame
         {
             Room currentRoom = bedroom;
 
-            //first line printed to console when opening the game
+            //first lines printed to console when opening the game
             Console.WriteLine("Hello, welcome to our adventure game! \n" +
                 "HAUNTED TOWER ESCAPE \n" +
                 "Enter commands to try and escape. Type 'help' at any time to see a list of commands.\n" +
@@ -171,7 +171,11 @@ namespace DungeonGame
                                 eventMessage = roomEvent.EventResult.ResultMessage;
                                 trollAlive = false;
                             }
-                            
+                            else
+                            {
+                                eventMessage = roomEvent.EventResult.ResultMessage;
+                            }
+
                         }
                         else if(roomEvent.EventResult.Type == Result.ResultType.GameOver)
                         {
@@ -188,6 +192,7 @@ namespace DungeonGame
                             isAlive = false;
                             }
                         }
+                        
                         
 
                     }
@@ -297,7 +302,7 @@ namespace DungeonGame
             new List<Item> { Item.mechanism },
             new List<Event> 
             { 
-                new Event("examine case", new Result("You look into the case and see various odds and ends.\n" +
+                new Event("examine glass case", new Result("You look into the case and see various odds and ends.\n" +
                 "It looks like this is mainly just a bunch of junk upon closer inspection.\n" +
                 "Sickly green toenails, a large crystal ball, a humanoid skull, and several small identical mechanisms made out of metal\n")), 
                 new Event("examine desk", new Result("The desk has papers covered in a scrawling script you cannot read.\n" +
@@ -334,10 +339,10 @@ namespace DungeonGame
             new List<Item> { },
             new List<Event> 
             { 
-                new Event("use vial", new Result("Why on earth would you do that?" +
+                new Event("use vials", new Result("Why on earth would you do that?" +
                 "\n\nGAME OVER.\nPress any key to exit...", true)), 
                 new Event("use chest", new Result(Item.slingshot, "You open the chest and inside you find several rusty and useless weapons. As you sort through the contents however, you find a slingshot that seems to be functional! You add the slingshot to your inventory.")),
-                new Event("examine vial", new Result("This looks like something that might be USEful")),
+                new Event("examine vials", new Result("This looks like something that might be USEful")),
                 new Event("examine chest", new Result("This looks like something that might be USEful")),
                 new Event("examine taxidermy", new Result("Scattered accross the room is a zoo of taxidermy animals.\n" +
                     "Some of which have horrible expressiosns as if they are in some excruciating pain.\n" +
