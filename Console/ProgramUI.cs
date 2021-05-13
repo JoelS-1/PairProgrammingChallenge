@@ -110,6 +110,7 @@ namespace DungeonGame
                             else if (userInput.Contains("tower") && !inventory.Contains(Item.key))
                             {
                                 Console.WriteLine("The tower door is locked tightly. How will you get in?");
+                                Console.ReadKey();
                             }
                             //checks if troll is alive before going to the roof
                             else
@@ -170,14 +171,11 @@ namespace DungeonGame
                                 eventMessage = roomEvent.EventResult.ResultMessage;
                                 trollAlive = false;
                             }
-                            else
-                            {
-                                eventMessage = roomEvent.EventResult.ResultMessage;
-                            }
+                            
                         }
                         else if(roomEvent.EventResult.Type == Result.ResultType.GameOver)
                         {
-                            if(roomEvent.TriggerPhrase.Contains("use ballon") && !inventory.Contains(Item.mechanism))
+                            if(roomEvent.TriggerPhrase.Contains("use balloon") && !inventory.Contains(Item.mechanism))
                             {
                                 Console.WriteLine("The hot air balloon seems to be missing a part on the firing mechanism.\n" +
                                     "This balloon will be useless unless you can fix it.\n" +
